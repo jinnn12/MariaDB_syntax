@@ -10,7 +10,7 @@
   select name, email from author;
   select * from author;
 
--- delete : 삭제제
+-- delete : 삭제
   delete from 테이블명 where 조건절;
   delete from author where id=3;
   보통 where 뒤에는 pk가 많이 사용된다, 특정 지을 수 있는 연산자라서.
