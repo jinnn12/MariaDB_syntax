@@ -28,6 +28,9 @@ select * from author where id>3; -- id가 4번 이상인 데이터를 조회
 select * from author where id>3 and name='hong4';
 select * from author where id>3 or;
 
+select * from author where id in (1,3,5);
+select * from author where author_id in (select id from author where name 'honggildong');
+
 -- 중복 제거 조회 : distinct
 select name from author;
 select distinct name from author;

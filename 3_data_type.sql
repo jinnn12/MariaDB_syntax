@@ -25,7 +25,7 @@ alter table author add column profile_image longblob;
 insert into author(id, email, profile_image) values (8, 'abc@naver.com', LOAD_FILE('"C:\\bauhaus.jpg"'))
 -> LOAD_FILE 는 경로 저장 함수
 
--- enum : 삽입될 수 있는 데이터의 종류를 한정하는 데이터 타입
+--  : 삽입될 수 있는 데이터의 종류를 한정하는 데이터 타입
 -- role컬럼 추가
   -- enum에 지정된 값이 아닌 경우
   alter table author add column role enum('admin', 'user');
@@ -82,6 +82,7 @@ select * from posts where created_time like '2025-05%'; --문자열처럼 조회
 select * from posts where '2025-05-01' <= created_time and created_time < '2025-05-21'
   --> 2025-05-01 ~ 2025-05-20 만 조회 가능! 끝자리는 <= 하면 안된다~~
       원리는 날짜만 입력시 '2025-05-01 00:00:00' <= time <= '2025-05-21 00:00:00'으로 처리가 됨됨
+select * from posts where date_format(created_time, '%Y-%m-%d')='2025-05-01'
 
 
 
